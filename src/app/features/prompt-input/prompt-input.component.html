@@ -1,0 +1,75 @@
+<div class="prompt-input-card">
+  <h2 class="card-title">Prompt Input</h2>
+
+  <!-- Model selector & input type controls -->
+  <div class="controls-row">
+    <div class="control-group">
+      <label for="model-select">Model</label>
+      <select
+        id="model-select"
+        [ngModel]="selectedModel"
+        (ngModelChange)="onModelChange($event)"
+        class="select-input"
+      >
+        @for (m of costCalc.availableModels(); track m.model) {
+          <option [value]="m.model">{{ m.displayName }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label>Token Type</label>
+      <div class="radio-group">
+        <label class="radio-label" [class.active]="inputType === 'input'">
+          <input
+            type="radio"
+            name="inputType"
+            value="input"
+            [ngModel]="inputType"
+            (ngModelChange)="onInputTypeChange($event)"
+          />
+          Input
+        </label>
+        <label class="radio-label" [class.active]="inputType === 'output'">
+          <input
+            type="radio"
+            name="inputType"
+            value="output"
+            [ngModel]="inputType"
+            (ngModelChange)="onInputTypeChange($event)"
+          />
+          Output
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Textarea for prompt -->
+  <div class="textarea-group">
+    <label for="prompt-textarea">Paste your prompt below</label>
+    <textarea
+      id="prompt-textarea"
+      [(ngModel)]="promptText"
+      placeholder="Enter the text you want to analyze for token count and cost..."
+      rows="10"
+      class="prompt-textarea"
+    ></textarea>
+    <span class="char-count">{{ promptText.length }} characters</span>
+  </div>
+
+  <!-- Action button -->
+  <div class="action-row">
+    <button
+      class="analyze-btn"
+      [disabled]="isProcessing() || !promptText.trim()"
+      (click)="onAnalyze()"
+    >
+      @if (isProcessing()) {
+        <span class="spinner"></span>
+        Analyzing...
+      } @else {
+        &#9654; Analyze
+      }
+    </button>
+  </div>
+</div>

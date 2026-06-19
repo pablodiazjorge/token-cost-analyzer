@@ -1,0 +1,46 @@
+<div class="app-shell">
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-content">
+      <div class="header-text">
+        <h1 class="app-title">Token Cost Analyzer</h1>
+        <p class="app-subtitle">
+          Analyze tokenization and estimate costs for LLM prompts — powered by tiktoken WASM &amp; D3.js
+        </p>
+      </div>
+      <div class="header-badge">
+        <span class="badge-tech">Angular 19</span>
+        <span class="badge-tech">Web Worker</span>
+        <span class="badge-tech">WebAssembly</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content: three-column dashboard layout -->
+  <main class="dashboard">
+    <div class="dashboard-grid">
+      <!-- Left column: Input -->
+      <section class="dashboard-col">
+        <app-prompt-input />
+      </section>
+
+      <!-- Middle column: Token display -->
+      <section class="dashboard-col">
+        <app-token-display
+          [distribution]="(tokenizer.analysisResult()?.distribution ?? [])"
+          [totalTokens]="tokenizer.analysisResult()?.tokens ?? 0"
+        />
+      </section>
+
+      <!-- Right column: Cost breakdown -->
+      <section class="dashboard-col">
+        <app-cost-breakdown />
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <p>Token Cost Analyzer &copy; 2025 — Client-side only. No data leaves your browser.</p>
+  </footer>
+</div>

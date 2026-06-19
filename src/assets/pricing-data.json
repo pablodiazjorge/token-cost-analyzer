@@ -1,0 +1,72 @@
+[
+  {
+    "model": "gpt-4o",
+    "displayName": "GPT-4o",
+    "inputPricePer1M": 2.50,
+    "outputPricePer1M": 10.00,
+    "currency": "USD"
+  },
+  {
+    "model": "gpt-4-turbo",
+    "displayName": "GPT-4 Turbo",
+    "inputPricePer1M": 10.00,
+    "outputPricePer1M": 30.00,
+    "currency": "USD"
+  },
+  {
+    "model": "gpt-3.5-turbo",
+    "displayName": "GPT-3.5 Turbo",
+    "inputPricePer1M": 0.50,
+    "outputPricePer1M": 1.50,
+    "currency": "USD"
+  },
+  {
+    "model": "claude-3.5-sonnet",
+    "displayName": "Claude 3.5 Sonnet",
+    "inputPricePer1M": 3.00,
+    "outputPricePer1M": 15.00,
+    "currency": "USD"
+  },
+  {
+    "model": "claude-3-opus",
+    "displayName": "Claude 3 Opus",
+    "inputPricePer1M": 15.00,
+    "outputPricePer1M": 75.00,
+    "currency": "USD"
+  },
+  {
+    "model": "claude-3-haiku",
+    "displayName": "Claude 3 Haiku",
+    "inputPricePer1M": 0.25,
+    "outputPricePer1M": 1.25,
+    "currency": "USD"
+  },
+  {
+    "model": "gemini-2.0-flash",
+    "displayName": "Gemini 2.0 Flash",
+    "inputPricePer1M": 0.10,
+    "outputPricePer1M": 0.40,
+    "currency": "USD"
+  },
+  {
+    "model": "gemini-1.5-pro",
+    "displayName": "Gemini 1.5 Pro",
+    "inputPricePer1M": 1.25,
+    "outputPricePer1M": 5.00,
+    "currency": "USD"
+  },
+  {
+    "model": "llama-3.3-70b",
+    "displayName": "Llama 3.3 70B (via Groq)",
+    "inputPricePer1M": 0.59,
+    "outputPricePer1M": 0.79,
+    "currency": "USD"
+  },
+  {
+    "model": "mixtral-8x22b",
+    "displayName": "Mixtral 8x22B (via Groq)",
+    "inputPricePer1M": 0.24,
+    "outputPricePer1M": 0.24,
+    "currency": "USD"
+  }
+]

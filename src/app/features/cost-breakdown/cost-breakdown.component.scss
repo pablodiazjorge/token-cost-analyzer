@@ -1,0 +1,120 @@
+.cost-breakdown-card {
+  background: #e4efe4;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #d0e4d0;
+}
+
+.card-title {
+  margin: 0 0 20px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a2e1a;
+}
+
+.cost-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+    padding: 10px 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #3a5a3a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #d0e4d0;
+  }
+
+  td {
+    padding: 12px 0;
+    border-bottom: 1px solid #e8f0e8;
+    font-size: 0.95rem;
+    color: #2a3a2a;
+  }
+}
+
+.metric-label {
+  font-weight: 500;
+  color: #5a7a5a;
+  width: 40%;
+}
+
+.metric-value {
+  font-weight: 500;
+  text-align: right;
+
+  &.highlight {
+    color: #3a6a3a;
+    font-weight: 600;
+  }
+}
+
+.type-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #dce8dc;
+  color: #3a6a3a;
+
+  &.output {
+    background: #f0e4e0;
+    color: #8a5a4a;
+  }
+}
+
+.total-row {
+  td {
+    border-bottom: none;
+    padding-top: 16px;
+    font-size: 1.05rem;
+  }
+
+  .metric-label {
+    color: #1a2e1a;
+    font-weight: 600;
+  }
+}
+
+.cost-value {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: #206020 !important;
+}
+
+.fractional-note {
+  margin-top: 16px;
+  padding: 14px;
+  background: #e8f0e8;
+  border: 1px solid #c0dcc0;
+  border-radius: 8px;
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #2a4a2a;
+    line-height: 1.6;
+
+    &.sub-note {
+      margin-top: 6px;
+      font-size: 0.82rem;
+      color: #3a5a3a;
+    }
+  }
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.empty-state {
+  padding: 24px;
+  text-align: center;
+  color: #4a6a4a;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,57 @@
+<div class="cost-breakdown-card">
+  <h2 class="card-title">Cost Breakdown</h2>
+
+  @if (currentPricing()) {
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="metric-label">Model</td>
+          <td class="metric-value highlight">{{ currentPricing()?.displayName }}</td>
+        </tr>
+        <tr>
+          <td class="metric-label">Token type</td>
+          <td class="metric-value">
+            <span class="type-badge" [class.output]="inputType() === 'output'">
+              {{ inputType() }}
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="metric-label">Price per 1M tokens</td>
+          <td class="metric-value">${{ pricePer1M() | number:'1.2-2' }}</td>
+        </tr>
+        <tr>
+          <td class="metric-label">Tokens analyzed</td>
+          <td class="metric-value">{{ totalTokens() | number }}</td>
+        </tr>
+        <tr class="total-row">
+          <td class="metric-label">Total cost</td>
+          <td class="metric-value cost-value">{{ costCalc.formatCost(calculatedCost()) }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Fractional cent breakdown for very small costs -->
+    @if (calculatedCost() > 0 && calculatedCost() < 0.01) {
+      <div class="fractional-note">
+        <p>
+          That's approximately <strong>{{ (calculatedCost() * 100) | number:'1.2-4' }}&cent;</strong>
+          ({{ (calculatedCost() * 1000) | number:'1.1-2' }} millicents).
+        </p>
+        <p class="sub-note">
+          You would need ~{{ (0.01 / calculatedCost()) | number:'1.0-0' }} similar prompts to reach $0.01.
+        </p>
+      </div>
+    }
+  } @else {
+    <div class="empty-state">
+      <p>Select a model and analyze a prompt to see cost details.</p>
+    </div>
+  }
+</div>

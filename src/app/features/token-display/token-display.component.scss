@@ -1,0 +1,89 @@
+.token-display-card {
+  background: #e4efe4;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #d0e4d0;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a2e1a;
+}
+
+.total-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #dce8dc;
+  border-radius: 20px;
+  padding: 6px 16px;
+}
+
+.badge-label {
+  font-size: 0.8rem;
+  color: #2d5a2d;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #3a6a3a;
+}
+
+.chart-container {
+  width: 100%;
+  overflow: hidden;
+
+  :host ::ng-deep .d3-tooltip {
+    position: absolute;
+    background: #1a2e1a;
+    color: #f0f7f0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    pointer-events: none;
+    z-index: 100;
+    line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  :host ::ng-deep .bar-fg {
+    transition: fill-opacity 0.15s;
+    cursor: pointer;
+  }
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  color: #4a6a4a;
+
+  .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0;
+  }
+}

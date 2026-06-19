@@ -1,0 +1,18 @@
+<div class="token-display-card">
+  <div class="card-header">
+    <h2 class="card-title">Token Distribution</h2>
+    <div class="total-badge">
+      <span class="badge-label">Total tokens</span>
+      <span class="badge-value">{{ totalTokens() | number }}</span>
+    </div>
+  </div>
+
+  @if (distribution().length > 0) {
+    <div #chartContainer class="chart-container"></div>
+  } @else {
+    <div class="empty-state">
+      <div class="empty-icon">&#128202;</div>
+      <p>Enter a prompt and click "Analyze" to see token distribution.</p>
+    </div>
+  }
+</div>
