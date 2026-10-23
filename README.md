@@ -1,5 +1,7 @@
 # Token Cost Analyzer (March 2025 - June 2025)
 
+> **Snapshot (2025).** Published in 2026, keeping the stack of the time; not maintained. Limitations: token counts are exact for the OpenAI models and approximate for Claude, Gemini, Llama and Mixtral, and the prices are from March to June 2025. See [Limitations](#limitations).
+
 A client-side application that analyzes tokenization and estimates costs for LLM prompts. It runs the computationally expensive tokenization inside a **Web Worker** using the **tiktoken WebAssembly** module (OpenAI's tokenizer), keeping the UI responsive. Results are visualized with **D3.js** bar charts and a detailed cost breakdown dashboard.
 
 > **100% Client-Side** — No backend, no API calls. All processing happens in your browser. Your prompts never leave your machine.
@@ -163,6 +165,12 @@ token-cost-analyzer/
 | Mixtral 8x22B       | $0.24                 | $0.24                  |
 
 *Pricing reflects market rates as of March–June 2025.*
+
+## Limitations
+
+- **Token counts are exact only for the OpenAI models.** The worker (`src/app/core/workers/tokenizer.worker.ts:16-29`) and the CLI (`scripts/analyze.ts`) use each OpenAI model's own encoding: `o200k_base` for GPT-4o and `cl100k_base` for GPT-4 Turbo and GPT-3.5 Turbo. Claude, Gemini, Llama and Mixtral have tokenizers of their own, which tiktoken does not include, so they are counted with `cl100k_base`: their token counts, and the costs built on them, are approximations.
+- **The prices are frozen.** `src/assets/pricing-data.json` holds the list prices from March to June 2025 and is not updated; check each provider's current pricing before relying on a figure.
+- **There are no tests.**
 
 ## License
 
